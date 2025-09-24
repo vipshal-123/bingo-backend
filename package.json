@@ -4,6 +4,7 @@
   "main": "server.ts",
   "scripts": {
     "dev": "env-cmd -f local.env -- nodemon --watch './**/*.ts' --exec ts-node -r tsconfig-paths/register server.ts",
+    "start": "ts-node -r tsconfig-paths/register server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
