@@ -46,7 +46,7 @@ export function bingoSocketHandler(io: Server, socket: Socket) {
             io.to(roomId).emit('gameStarted', {
                 calledNumbers: room.calledNumbers || [],
                 turn: room.turn,
-                players: room.players.map((p) => ({ id: p._id, name: p.name, strikes: p.strikes })),
+                players: room.players.map((p) => ({ _id: p._id, name: p.name, strikes: p.strikes })),
             })
 
             cb({ ok: true })
@@ -102,7 +102,7 @@ export function bingoSocketHandler(io: Server, socket: Socket) {
                 by: playerId,
                 calledNumbers: room.calledNumbers,
                 turn: room.turn,
-                players: room.players.map((p) => ({ id: p._id, marked: p.marked })),
+                players: room.players.map((p) => ({ _id: p._id, marked: p.marked })),
             })
 
             cb({ ok: true })

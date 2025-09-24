@@ -115,7 +115,7 @@ export const startGame = async (req: Request, res: Response) => {
         socketEmitToRoom(room.roomId, 'gameStarted', {
             calledNumbers: room.calledNumbers,
             turn: room.turn,
-            players: room.players.map((p) => ({ id: p._id, name: p.name, strikes: p.strikes })),
+            players: room.players.map((p) => ({ _id: p._id, name: p.name, strikes: p.strikes })),
         })
 
         return res.json({ success: true, message: 'Game started' })
@@ -188,7 +188,7 @@ export const confirmProposal = async (req: Request, res: Response) => {
             by: playerId,
             calledNumbers: room.calledNumbers,
             turn: room.turn,
-            players: room.players.map((p) => ({ id: p._id, marked: p.marked })),
+            players: room.players.map((p) => ({ _id: p._id, marked: p.marked })),
         })
 
         return res.json({ success: true })
