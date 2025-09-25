@@ -10,7 +10,7 @@ export class SocketInstance {
     constructor(httpServer: any) {
         SocketInstance.io = new Server(httpServer, {
             cors: {
-                origin: ['http://localhost:3000', 'https://admin.socket.io'],
+                origin: config.CORS_ORIGIN,
                 credentials: true,
             },
         })
